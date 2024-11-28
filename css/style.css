@@ -264,17 +264,43 @@
     }
     
 }
+/* General responsiveness for images */
+.imgdec, 
+.container-fluid img {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Media query for devices with width up to 768px */
 @media (max-width: 768px) {
-    .navdeck img {
-        max-width: 90%; /* Reduce the width for smaller screens */
+    .imgdec {
+        max-width: 70%; /* Scale down the logo */
+    }
+    .container-fluid img {
+        max-width: 80%; /* Adjust other images */
     }
 }
 
+/* Media query for devices with width up to 480px */
 @media (max-width: 480px) {
-    .navdeck img {
-        max-width: 85%; /* Further adjustments for very small screens */
+    .imgdec {
+        max-width: 60%; /* Further scale down for smaller devices */
+    }
+    .container-fluid img {
+        max-width: 75%;
     }
 }
+
+/* Media query for iPhone SE (max-width: 375px) */
+@media (max-width: 375px) {
+    .imgdec {
+        max-width: 50%; /* Optimize for smaller screens */
+    }
+    .container-fluid img {
+        max-width: 70%;
+    }
+}
+
 
 .page-header {
     background-position: center center;

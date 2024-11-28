@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>PRTC-Gallery</title>
 
 
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
@@ -13,7 +13,32 @@
 
  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
 <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
- 
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta content="" name="keywords">
+<meta content="" name="description">
+<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<link rel="manifest" href="/site.webmanifest" />
+<!-- Favicon -->
+<link href="favicon.ico" rel="icon">
+
+<!-- Google Web Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet"> 
+
+<!-- Icon Font Stylesheet -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+<!-- Libraries Stylesheet -->
+<link href="lib/animate/animate.min.css" rel="stylesheet">
+<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+<link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 </head>
 <style>
 	body {
@@ -106,40 +131,140 @@ img.zoom {
 .topnav .icon {
   display: none;
 }
-
-@media screen and (max-width: 600px) {
-  .topnav a:not(:first-child) {display: none;}
-  .topnav a.icon {
-    float: right;
-    display: block;
+/* Scrollbar Styles */
+::-webkit-scrollbar-button:horizontal:decrement {
+    background-image: url('left-arrow.png'); /* Left button */
+    background-size: contain;
   }
+  
+  ::-webkit-scrollbar-button:horizontal:increment {
+    background-image: url('right-arrow.png'); /* Right button */
+    background-size: contain;
+  }
+::-webkit-scrollbar{
+    width: 0.9rem;
+  }
+  
+  ::-webkit-scrollbar-track{
+    background-color: rgb(255, 255, 255);
+  }
+  
+  ::-webkit-scrollbar-thumb{
+    background-color: rgb(216, 19, 36);
+    background-clip: inherit;
+    height: 0.3rem;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover{
+    background-color:  rgb(231, 40, 56);
+    scroll-behavior: smooth;
+  }
+  
+  /* Horizontal Scrollbar */
+  ::-webkit-scrollbar:horizontal{
+    background: rgb(141, 141, 234);
+    width: 0.5rem;
+    height: 0.4rem;
+    scroll-behavior: smooth;
+  }
+  
+  /* Scrollbar Buttons */
+  ::-webkit-scrollbar-button {
+    background-color: rgb(255, 255, 255); /* Button color */
+    height: 18px; /* Button height */
+    width: 18px; /* Button width */
+  }
+  
+  ::-webkit-scrollbar-button:increment {
+    background-color:rgb(255, 255, 255)/* Button for down/right */
+  }
+  
+  ::-webkit-scrollbar-button:decrement {
+    background-color:rgb(255, 255, 255) /* Button for up/left */
+  }
+  
+  ::-webkit-scrollbar-button:vertical:decrement {
+    background-image: url('/css/up.png'); /* Up button */
+    background-size: contain;
+  }
+  
+  ::-webkit-scrollbar-button:vertical:increment {
+    background-image: url('/css/down.png'); /* Down button */
+    background-size: contain;
+  }
+  
+  ::-webkit-scrollbar-button:horizontal:decrement {
+    background-image: url('path-to-left-arrow.png'); /* Left button */
+    background-size: contain;
+  }
+  
+  ::-webkit-scrollbar-button:horizontal:increment {
+    background-image: url('path-to-right-arrow.png'); /* Right button */
+    background-size: contain;
+  }
+/* Base styles for the navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+.logo{
+  display: flex;
+}
+.topnav a {
+  float: center;
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Right-aligned links */
+.right-lnk {
+  float: right;
+}
+
+/* The hamburger icon */
+.icon {
+  display: none;
+}
+
+/* Responsive styles */
 @media screen and (max-width: 600px) {
-  .topnav.responsive {position: relative;}
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
+  .topnav a {
     float: none;
-    display: block;
+    display: none; /* Hide links by default on small screens */
     text-align: left;
   }
+  
+  .topnav a.icon {
+    float: center;
+    display: block; /* Show the hamburger icon */
+  }
+
+  .topnav.responsive a {
+    display: block; /* Show links when menu is toggled */
+  }
 }
 
-.right-lnk {
-   float: right;
-}
+
 </style>
 <body>
 	
 	<div class="topnav" id="myTopnav">
+    <div class="logo">
+      <img src="PRTC Logo (EPS)-01-01 (2) (1).png" alt="Logo" style="width: 23%;">
+    </div>
 		<a href="index.html" >Home <i class="fa fa-home" aria-hidden="true"></i></a>
 		<a href="gallery.html" class="active"> Gallery <i class="fa fa-book"></i></a>
 		<a href="contact.html">Contact <i class="fa fa-envelope"></i></a>
 		<a href="about.html">About <i class="fa fa-user"></i></a>
+    <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">&#9776;</a>
 	</div>
 
     <!-- Page Content -->
@@ -207,7 +332,89 @@ img.zoom {
       
 
     </div>
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+      <div class="container py-5">
+          <div class="row g-5">
+              <div class="col-lg-3 col-md-6">
+                  <h4 class="text-light mb-4">Address</h4>
+                  <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>79-C, PHASE II EXTENSION DHA, KARACHI-75500, PAKISTAN</p>
+                  <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+92-21-35804646 TO 51</p>
+                  <p class="mb-2" style="white-space: nowrap;"><i class="fa fa-envelope me-3"></i>INFO@BRIDGESTONE.NET.PK</p>
+                  <div class="d-flex pt-2">
+                      <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                      <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
+                      <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                      <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
+                  </div>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                  <h4 class="text-light mb-4">Opening Hours</h4>
+                  <h6 class="text-light">Monday - Thursday:</h6>
+                  <p class="mb-4">09:00 AM - 05:00 PM</p>
+                  <h6 class="text-light">Friday - Saturday:</h6>
+                  <p class="mb-0">09:00 AM - 1:00 PM</p>
+              </div>
+              <div class="col-lg-3 col-md-6">
+                  
+                  <a class="btn btn-link" href="">Home</a>
+                  <a class="btn btn-link" href="">About</a>
+                  <a class="btn btn-link" href="">Services</a>
+                  <a class="btn btn-link" href="">Pages</a>
+                  <a class="btn btn-link" href="">Contact</a>
+              </div>
+             <div>
+           <img src="img/PRTC.jpg" alt="logo" srcset="" style="float: right; margin-top: -20%;">
+             </div>
+              </div>
+          </div>
+      </div>
+      <div class="container">
+          <div class="copyright">
+              <div class="row">
+                  <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                      &copy; <a class="border-bottom" href="#">Pakistan Rubber & Tyre Company</a>, All Right Reserved.
+<br>
+                  
+                 
+              </div>
+          </div>
+      </div>
+  </div>
+  <!-- Footer End -->
+  <!-- Footer End -->
+
+
+  <!-- Back to Top -->
+  <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+  <!-- JavaScript Libraries -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/tempusdominus/js/moment.min.js"></script>
+  <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+  <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+  <!-- Template Javascript -->
+  <script src="js/main.js"></script>
+      
+ 
+
 <script>
+  function toggleMenu() {
+  const nav = document.getElementById("myTopnav");
+  if (nav.className === "topnav") {
+    nav.className += " responsive"; // Add the responsive class
+  } else {
+    nav.className = "topnav"; // Remove the responsive class
+  }
+}
+
 	$(document).ready(function(){
   $(".fancybox").fancybox({
         openEffect: "none",
